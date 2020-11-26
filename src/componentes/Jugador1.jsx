@@ -131,14 +131,6 @@ function Jugador1 (){
         setSeleccionComputadora(eleccionComputadora);
         evaluarPartida(eleccionJugador,eleccionComputadora);
     }
-  
-    function reinicioJuego(){
-        setSeleccionJugador(null);
-        setSeleccionComputadora(null);
-        setResultado(null);
-        setPuntajeComputadora(0);
-        setPuntajeJugador(0);
-    }
 
     return (
         <div className="divClass ">
