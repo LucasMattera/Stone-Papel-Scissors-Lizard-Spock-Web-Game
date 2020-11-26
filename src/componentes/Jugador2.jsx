@@ -25,28 +25,27 @@ function Jugador2 (){
                                         eleccionJugadorPerdedor,
                                         comparativa2A,
                                         comparativa2B) {
-        
+
         if( (eleccionJugadorGanador === comparativa1) && 
-            ((eleccionJugadorPerdedor === comparativa2A) || (eleccionJugadorPerdedor === comparativa2B)) ){
-            
-            setPuntajeJugador1( puntajeJugador1 + 1 )
-            setResultado("Gana Jugador 1");
+            ((eleccionJugadorPerdedor === comparativa2A) || (eleccionJugadorPerdedor === comparativa2B)) ){ 
+                
+            setPuntajeJugador1( puntajeJugador1 + 1 ) ; setResultado( "Gana Jugador 1" )         
         }
     }
-    
+
     function condicionalYRetornoGanadorP2(eleccionJugadorGanador, 
                                         comparativa1, 
                                         eleccionJugadorPerdedor,
                                         comparativa2A,
                                         comparativa2B) {
-        
-        if( (eleccionJugadorGanador === comparativa1) &&
-            ((eleccionJugadorPerdedor === comparativa2A) || (eleccionJugadorPerdedor === comparativa2B)) ){
-            
-            setPuntajeJugador2( puntajeJugador2 + 1 )
-            setResultado("Gana Jugador 2");
+
+        if( (eleccionJugadorGanador === comparativa1) && 
+            ((eleccionJugadorPerdedor === comparativa2A) || (eleccionJugadorPerdedor === comparativa2B)) ){ 
+                
+                setPuntajeJugador2( puntajeJugador2 + 1 ) ; setResultado( "Gana Jugador 2" ) 
         }
     }
+
 
     function evaluarPartida2(eleccionJugador1, eleccionJugador2){
        //Piedra
@@ -54,16 +53,19 @@ function Jugador2 (){
                                     "Piedra", 
                                     eleccionJugador2,
                                     "Tijera",
-                                    "Lagarto")
+                                    "Lagarto"
+                                    )
 
         condicionalYRetornoGanadorP2(eleccionJugador2, 
                                     "Piedra", 
                                     eleccionJugador1,
-                                    "Papel",
-                                    "Spock")
+                                    "Tijera",
+                                    "Lagarto"
+                                    )
 
         if(eleccionJugador1 === eleccionJugador2){
-            setResultado("Empate");
+            setResultado("Empate"
+            );
         }
 
         //Papel
@@ -71,68 +73,77 @@ function Jugador2 (){
                                     "Papel", 
                                     eleccionJugador2,
                                     "Piedra",
-                                    "Spock")
+                                    "Spock"
+                                    )
 
         condicionalYRetornoGanadorP2(eleccionJugador2, 
                                     "Papel", 
                                     eleccionJugador1,
-                                    "Tijera",
-                                    "Lagarto")
+                                    "Piedra",
+                                    "Spock"
+                                    )
 
         //Tijera
         condicionalYRetornoGanadorP1(eleccionJugador1, 
                                     "Tijera", 
                                     eleccionJugador2,
                                     "Papel",
-                                    "Lagarto")
+                                    "Lagarto"
+                                    )
 
         condicionalYRetornoGanadorP2(eleccionJugador2, 
                                     "Tijera", 
                                     eleccionJugador1,
-                                    "Piedra",
-                                    "Spock")
+                                    "Papel",
+                                    "Lagarto"
+                                    )
 
         //Lagarto
         condicionalYRetornoGanadorP1(eleccionJugador1, 
                                     "Lagarto", 
                                     eleccionJugador2,
                                     "Papel",
-                                    "Spock")
+                                    "Spock"
+                                    )
 
         condicionalYRetornoGanadorP2(eleccionJugador2, 
                                     "Lagarto", 
                                     eleccionJugador1,
-                                    "Tijera",
-                                    "Piedra")
+                                    "Papel",
+                                    "Spock"
+                                    )
 
         //Spock
         condicionalYRetornoGanadorP1(eleccionJugador1, 
                                     "Spock", 
                                     eleccionJugador2,
                                     "Tijera",
-                                    "Piedra")
+                                    "Piedra"
+                                    )
 
         condicionalYRetornoGanadorP2(eleccionJugador2, 
                                     "Spock", 
                                     eleccionJugador1,
-                                    "Lagarto",
-                                    "Papel")
+                                    "Tijera",
+                                    "Piedra"
+                                    )
         
-        
-    }
-    
-    function jugarJugador1(eleccionJugador1){
-        setSeleccionJugador1(eleccionJugador1)
     }
 
-    function jugarJugador2(eleccionJugador2){
-        setSeleccionJugador2(eleccionJugador2)
+    /* if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    } */
+
+    function mostrarElecciones(id) {
+        var x = document.getElementById(id).style.display = "block"
+        //x.style.display = "block"
     }
 
-    function JugarDeADos(eleccionJugador2){
-        //jugarJugador1(eleccionJugador1);
-        setSeleccionJugador2(eleccionJugador2);
-        evaluarPartida2(seleccionJugador1, seleccionJugador2);
+    function esconderElecciones(id) { 
+        var x = document.getElementById(id)
+        x.style.display = "none" 
     }
 
     return (
@@ -140,20 +151,25 @@ function Jugador2 (){
             <Navbar/>
                 <div className="container">
                             <div className="row">
-                            <div className="puntos-jugadores">  
-                                <div>
-                                    Pts Jugador 1: {puntajeJugador1}
-                                </div>
-                                <div>
-                                    Pts Jugador 2: {puntajeJugador2}
+                                <div className="puntos-jugadores">  
+                                    <div>
+                                        Pts Jugador 1: {puntajeJugador1}
+                                    </div>
+                                    <div>
+                                        Pts Jugador 2: {puntajeJugador2}
+                                    </div>
                                 </div>
                             </div>
-                            </div>
+
+
                         <div className="container-block">
                             <div className="contenedor-botones">
                                 <button 
                                     className="boton-img1 teal accent-2" 
-                                    onClick={() => {jugarJugador1("Piedra"); console.log(seleccionJugador1)}}>
+                                    onClick={() => {
+                                        setSeleccionJugador1("Piedra")
+                                        esconderElecciones("elecciones-jugadores")}
+                                    }>
                                     <img 
                                         src={Piedra} 
                                         className="botones1" 
@@ -163,7 +179,10 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img2 lime lighten-1" 
-                                    onClick={() => {jugarJugador1("Papel"); console.log(seleccionJugador1)}}>
+                                    onClick={() => {
+                                        setSeleccionJugador1("Papel")
+                                        esconderElecciones("elecciones-jugadores")}
+                                    }>
                                     <img 
                                         src={Papel} 
                                         className="botones2" 
@@ -173,7 +192,10 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img3 white" 
-                                    onClick={() => {jugarJugador1("Tijera"); console.log(seleccionJugador1)}}>
+                                    onClick={() => {
+                                        setSeleccionJugador1("Tijera")
+                                        esconderElecciones("elecciones-jugadores")}
+                                    }>
                                     <img 
                                         src={Tijera} 
                                         className="botones3" 
@@ -183,7 +205,10 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img4 blue darken-1" 
-                                    onClick={() => {jugarJugador1("Lagarto"); console.log(seleccionJugador1)}}>
+                                    onClick={() => {
+                                        setSeleccionJugador1("Lagarto")
+                                        esconderElecciones("elecciones-jugadores")}
+                                    }>
                                     <img 
                                         src={Lagarto} 
                                         className="botones4" 
@@ -193,7 +218,10 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img5 red" 
-                                    onClick={() => {jugarJugador1("Spock"); console.log(seleccionJugador1)}}>
+                                    onClick={() => {
+                                        setSeleccionJugador1("Spock")
+                                        esconderElecciones("elecciones-jugadores")}
+                                    }>
                                     <img 
                                         src={Spock} 
                                         className="botones5" 
@@ -204,11 +232,12 @@ function Jugador2 (){
                             </div>
                         </div>
 
+                    
                         <div className="container-block">
                             <div className="contenedor-botones">
                                 <button 
                                     className="boton-img1 teal accent-2" 
-                                    onClick={() => {jugarJugador2("Piedra")}}
+                                    onClick={() => {setSeleccionJugador2("Piedra")}}
                                 >
                                     <img 
                                         src={Piedra} 
@@ -219,7 +248,7 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img2 lime lighten-1" 
-                                    onClick={() => {jugarJugador2("Papel")}}
+                                    onClick={() => {setSeleccionJugador2("Papel")}}
                                 >
                                     <img 
                                         src={Papel} 
@@ -230,7 +259,7 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img3 white" 
-                                    onClick={() => {jugarJugador2("Tijera")}}
+                                    onClick={() => {setSeleccionJugador2("Tijera")}}
                                 >
                                     <img 
                                         src={Tijera} 
@@ -241,7 +270,7 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img4 blue darken-1" 
-                                    onClick={() => {jugarJugador2("Lagarto")}}
+                                    onClick={() => {setSeleccionJugador2("Lagarto")}}
                                 >
                                     <img 
                                         src={Lagarto} 
@@ -252,7 +281,7 @@ function Jugador2 (){
                                 </button>
                                 <button 
                                     className="boton-img5 red" 
-                                    onClick={() => {jugarJugador2("Spock")}}
+                                    onClick={() => {setSeleccionJugador2("Spock")}}
                                 >
                                     <img 
                                         src={Spock} 
@@ -265,7 +294,7 @@ function Jugador2 (){
                         </div>
 
                         <div className="row">
-                            <div className="elecciones-jugadores">
+                            <div className="elecciones-jugadores" id="elecciones-jugadores">
                                 <div sm={2}>
                                     Jugador 1 Eligio: {seleccionJugador1}
                                 </div>
@@ -284,7 +313,10 @@ function Jugador2 (){
                         <div className="row">
                             <button 
                                 className="boton-img5 red" 
-                                onClick={() => {evaluarPartida2(seleccionJugador1, seleccionJugador2)}}
+                                onClick={() => {
+                                    evaluarPartida2(seleccionJugador1, seleccionJugador2)
+                                    mostrarElecciones("elecciones-jugadores")
+                                }}
                                 >Jugar
                             </button>
                         </div>
