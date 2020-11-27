@@ -10,11 +10,9 @@ import { Link } from 'react-router-dom';
 
 function JugadorVsJugador (){
 
-    //Hooks Jugador 1
     const [seleccionJugador1, setSeleccionJugador1] = useState();  
     const [puntajeJugador1, setPuntajeJugador1] = useState(0);
 
-    //Hooks Jugador 2
     const [seleccionJugador2, setSeleccionJugador2] = useState();
     const [puntajeJugador2, setPuntajeJugador2] = useState(0);
     
