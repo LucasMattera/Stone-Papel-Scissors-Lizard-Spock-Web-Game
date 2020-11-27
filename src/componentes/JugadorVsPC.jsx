@@ -4,11 +4,11 @@ import Papel from "../imagenes/papel.svg";
 import Piedra from "../imagenes/piedra.svg";
 import Spock from "../imagenes/spock.svg";
 import Tijera from "../imagenes/tijera.svg";
-import "../css/Jugador1.css";
+import "../css/JugadorVsPC.css";
 import Navbar from "./Navbar";
 import { Link } from 'react-router-dom';
 
-function Jugador1 (){
+function JugadorVsPC (){
 
     //Hooks Jugador
     const [seleccionJugador, setSeleccionJugador] = useState();  
@@ -234,4 +234,4 @@ function Jugador1 (){
 
 }
 
-export default Jugador1;
+export default JugadorVsPC;

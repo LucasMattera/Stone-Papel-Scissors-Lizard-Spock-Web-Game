@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
-import "../css/Juego.css";
+import "../css/Home.css";
 import {Link} from "react-router-dom";
 import ReglasJuego from '../imagenes/reglas pptls.png';
 
-function Juego(){
+function Home(){
 	return(
 		<div className="Juego">
 			<Navbar/>
@@ -28,16 +28,16 @@ function Juego(){
 						<div className="un-jugador">
 							<Link 
 								className="btn-small black" 
-								to="/jugador1">
-									1 Jugador
+								to="/1vsPC">
+									Un Jugador
 							</Link>
 						</div>
 
 						<div className="dos-jugadores">
 							<Link classNa
 								me="btn-small black" 
-								to="/jugador2">
-									2 Jugadores
+								to="/1v1">
+									Dos Jugadores
 							</Link>
 						</div>
 					</div>
@@ -47,4 +47,4 @@ function Juego(){
 	)
 }
 
-export default Juego;
+export default Home;

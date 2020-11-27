@@ -1,0 +1,12 @@
+.Juego {
+    text-align: center;
+}
+
+.titulo-juego {
+	font-family: sans-serif;
+	font-size: 15px;
+}
+
+.juego-container{
+	padding: 100px;
+}
