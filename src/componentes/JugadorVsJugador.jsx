@@ -128,12 +128,14 @@ function JugadorVsJugador (){
         
     }
 
-    function mostrarElecciones(id) {
-        document.getElementById(id).style.display = "block"
+    function mostrar(id) {
+        var x = document.getElementById(id)
+        x.style.visibility = "visible"
     }
 
-    function esconderElecciones(id) { 
-        document.getElementById(id).style.display = "none" 
+    function esconder(id) { 
+        var x = document.getElementById(id)
+        x.style.visibility = "hidden" 
     }
 
     return (
@@ -158,7 +160,8 @@ function JugadorVsJugador (){
                                 className="boton-img1 teal accent-2" 
                                 onClick={() => {
                                     setSeleccionJugador1("Piedra")
-                                    esconderElecciones("elecciones-jugadores")}
+                                    esconder("elecciones-jugadores")
+                                    esconder("resultado")}
                                 }>
                                 <img 
                                     src={Piedra} 
@@ -171,7 +174,8 @@ function JugadorVsJugador (){
                                 className="boton-img2 lime lighten-1" 
                                 onClick={() => {
                                     setSeleccionJugador1("Papel")
-                                    esconderElecciones("elecciones-jugadores")}
+                                    esconder("elecciones-jugadores")
+                                    esconder("resultado")}
                                 }>
                                 <img 
                                     src={Papel} 
@@ -184,7 +188,8 @@ function JugadorVsJugador (){
                                 className="boton-img3 white" 
                                 onClick={() => {
                                     setSeleccionJugador1("Tijera")
-                                    esconderElecciones("elecciones-jugadores")}
+                                    esconder("elecciones-jugadores")
+                                    esconder("resultado")}
                                 }>
                                 <img 
                                     src={Tijera} 
@@ -197,7 +202,8 @@ function JugadorVsJugador (){
                                 className="boton-img4 blue darken-1" 
                                 onClick={() => {
                                     setSeleccionJugador1("Lagarto")
-                                    esconderElecciones("elecciones-jugadores")}
+                                    esconder("elecciones-jugadores")
+                                    esconder("resultado")}
                                 }>
                                 <img 
                                     src={Lagarto} 
@@ -210,7 +216,8 @@ function JugadorVsJugador (){
                                 className="boton-img5 red" 
                                 onClick={() => {
                                     setSeleccionJugador1("Spock")
-                                    esconderElecciones("elecciones-jugadores")}
+                                    esconder("elecciones-jugadores")
+                                    esconder("resultado")}
                                 }>
                                 <img 
                                     src={Spock} 
@@ -295,40 +302,45 @@ function JugadorVsJugador (){
                     </div>
 
                     <div className="container-block"> 
-                        <div className="resultado">
+                        <div className="resultado" id="resultado">
                             {resultado}
                         </div>
                     </div>
                     
                     <div className="row">
-                        <button 
-                            className="boton-jugar red" 
-                            onClick={() => {
-                                evaluarPartida2(seleccionJugador1, seleccionJugador2)
-                                mostrarElecciones("elecciones-jugadores")
-                            }}
-                            >Jugar
-                        </button>
-                        <div className= "regla-1v1">
-                            <p>
-                                Para la modalidad de 1v1 el Jugador 1 
-                                debera ser el primero que elija
-                            </p>
+                        <div className="boton-div">
+                            <button 
+                                className="boton-jugar red" 
+                                onClick={() => {
+                                    evaluarPartida2(seleccionJugador1, seleccionJugador2)
+                                    mostrar("elecciones-jugadores")
+                                    mostrar("resultado")
+                                }}
+                                >Jugar
+                            </button>
+                        </div>
+                        <div className="regla-div">    
+                            <div className= "regla-1v1">
+                                <p>
+                                    Para la modalidad de 1v1 el Jugador 1 
+                                    debera ser el primero que elija
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <div className="row">
-                            <div className="main-menu">
-                                <Link to="/">
-                                    <button className="boton-home">Volver</button>
-                                </Link>
-                            </div>
+                        <div className="main-menu">
+                            <Link to="/">
+                                <button className="boton-home">Volver</button>
+                            </Link>
                         </div>
+                    </div>
                         
                 </div>
         </div>
     )
 
 }
-
+// aparecer y desaparecer el cartelito de quien gano
 export default JugadorVsJugador;
