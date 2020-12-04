@@ -7,6 +7,7 @@ import Tijera from "../imagenes/tijera.svg";
 import "../css/JugadorVsPC.css";
 import Navbar from "./Navbar";
 import { Link } from 'react-router-dom';
+import ParticlesBg from 'particles-bg'
 
 function JugadorVsPC (){
 
@@ -135,100 +136,106 @@ function JugadorVsPC (){
     return (
         <div className="divClass ">
             <Navbar/>
-                <div className="container">
-                    <div className="row">
-                        <div className="puntos-jugadores">  
-                            <div>
-                                Pts Jugador: {puntajeJugador}
-                            </div>
-                            <div>
-                                Pts Cpu: {puntajeComputadora}
-                            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="puntos-jugadores">  
+                        <div>
+                            Pts Jugador: {puntajeJugador}
+                        </div>
+                        <div>
+                            Pts Cpu: {puntajeComputadora}
                         </div>
                     </div>
-
-                    
-                    <div className="container-block">
-                        <div className="contenedor-botones">
-                            <button 
-                                className="boton-img1 teal accent-2" 
-                                onClick={() => {Jugar("Piedra")}}>
-                                    <img 
-                                        src={Piedra} 
-                                        className="botones1" 
-                                        width="100" 
-                                        height="100"
-                                    /> 
-                            </button>
-                            <button 
-                                className="boton-img2 lime lighten-1" 
-                                onClick={() => {Jugar("Papel")}}>
-                                    <img 
-                                        src={Papel} 
-                                        className="botones2" 
-                                        width="100" 
-                                        height="100"
-                                    /> 
-                            </button>
-                            <button 
-                                className="boton-img3 white" 
-                                onClick={() => {Jugar("Tijera")}}>
-                                    <img 
-                                        src={Tijera} 
-                                        className="botones3" 
-                                        width="100" 
-                                        height="100"
-                                    /> 
-                            </button>
-                            <button 
-                                className="boton-img4 blue darken-1" 
-                                onClick={() => {Jugar("Lagarto")}}>
-                                    <img 
-                                        src={Lagarto} 
-                                        className="botones4" 
-                                        width="100" 
-                                        height="100"
-                                    /> 
-                            </button>
-                            <button 
-                                className="boton-img5 red" 
-                                onClick={() => {Jugar("Spock")}}>
-                                    <img 
-                                        src={Spock} 
-                                        className="botones5" 
-                                        width="100" 
-                                        height="100"
-                                    /> 
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                            <div className="elecciones-jugadores">
-                                <div sm={2}>
-                                    Elegiste: {seleccionJugador}
-                                </div>
-                                <div sm={3}>
-                                    Cpu eligio: {seleccionComputadora}
-                                </div>
-                            </div>
-                    </div>
-
-                    <div className="container-block"> 
-                        <div className="resultado">
-                            {resultado}
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="main-menu">
-                            <Link to="/">
-                                <button className="boton-home">Volver</button>
-                            </Link>
-                        </div>
-                    </div>
-                        
                 </div>
+
+                
+                <div className="container-block">
+                    <div className="contenedor-botones">
+                        <button 
+                            className="boton-img1 teal accent-2" 
+                            onClick={() => {Jugar("Piedra")}}>
+                                <img 
+                                    src={Piedra} 
+                                    className="botones1" 
+                                    width="100" 
+                                    height="100"
+                                /> 
+                        </button>
+                        <button 
+                            className="boton-img2 lime lighten-1" 
+                            onClick={() => {Jugar("Papel")}}>
+                                <img 
+                                    src={Papel} 
+                                    className="botones2" 
+                                    width="100" 
+                                    height="100"
+                                /> 
+                        </button>
+                        <button 
+                            className="boton-img3 white" 
+                            onClick={() => {Jugar("Tijera")}}>
+                                <img 
+                                    src={Tijera} 
+                                    className="botones3" 
+                                    width="100" 
+                                    height="100"
+                                /> 
+                        </button>
+                        <button 
+                            className="boton-img4 blue darken-1" 
+                            onClick={() => {Jugar("Lagarto")}}>
+                                <img 
+                                    src={Lagarto} 
+                                    className="botones4" 
+                                    width="100" 
+                                    height="100"
+                                /> 
+                        </button>
+                        <button 
+                            className="boton-img5 red" 
+                            onClick={() => {Jugar("Spock")}}>
+                                <img 
+                                    src={Spock} 
+                                    className="botones5" 
+                                    width="100" 
+                                    height="100"
+                                /> 
+                        </button>
+                    </div>
+                </div>
+
+                <div className="row">
+                        <div className="elecciones-jugadores">
+                            <div sm={2}>
+                                Elegiste: {seleccionJugador}
+                            </div>
+                            <div sm={3}>
+                                Cpu eligio: {seleccionComputadora}
+                            </div>
+                        </div>
+                </div>
+
+                <div className="container-block"> 
+                    <div className="resultado">
+                        {resultado}
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="main-menu">
+                        <Link to="/">
+                            <button className="boton-home">Volver</button>
+                        </Link>
+                    </div>
+                </div>
+                    
+            </div>
+            <ParticlesBg 
+				type="lines" 
+				bg={true} 
+				color="2C436D" 
+				num={200} 
+			/>
         </div> 
     )
 

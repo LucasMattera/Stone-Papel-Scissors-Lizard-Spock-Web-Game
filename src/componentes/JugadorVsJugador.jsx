@@ -7,6 +7,7 @@ import Tijera from "../imagenes/tijera.svg";
 import "../css/JugadorVsPC.css";
 import Navbar from "./Navbar";
 import { Link } from 'react-router-dom';
+import ParticlesBg from 'particles-bg'
 
 function JugadorVsJugador (){
 
@@ -141,206 +142,212 @@ function JugadorVsJugador (){
     return (
         <div className="divClass ">
             <Navbar/>
-                <div className="container">
-                    <div className="row">
-                        <div className="puntos-jugadores">  
-                            <div>
-                                Pts Jugador 1: {puntajeJugador1}
-                            </div>
-                            <div>
-                                Pts Jugador 2: {puntajeJugador2}
-                            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="puntos-jugadores">  
+                        <div>
+                            Pts Jugador 1: {puntajeJugador1}
+                        </div>
+                        <div>
+                            Pts Jugador 2: {puntajeJugador2}
                         </div>
                     </div>
-
-
-                    <div className="container-block">
-                        <div className="contenedor-botones">
-                            <button 
-                                className="boton-img1 teal accent-2" 
-                                onClick={() => {
-                                    setSeleccionJugador1("Piedra")
-                                    esconder("elecciones-jugadores")
-                                    esconder("resultado")}
-                                }>
-                                <img 
-                                    src={Piedra} 
-                                    className="botones1" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img2 lime lighten-1" 
-                                onClick={() => {
-                                    setSeleccionJugador1("Papel")
-                                    esconder("elecciones-jugadores")
-                                    esconder("resultado")}
-                                }>
-                                <img 
-                                    src={Papel} 
-                                    className="botones2" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img3 white" 
-                                onClick={() => {
-                                    setSeleccionJugador1("Tijera")
-                                    esconder("elecciones-jugadores")
-                                    esconder("resultado")}
-                                }>
-                                <img 
-                                    src={Tijera} 
-                                    className="botones3" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img4 blue darken-1" 
-                                onClick={() => {
-                                    setSeleccionJugador1("Lagarto")
-                                    esconder("elecciones-jugadores")
-                                    esconder("resultado")}
-                                }>
-                                <img 
-                                    src={Lagarto} 
-                                    className="botones4" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img5 red" 
-                                onClick={() => {
-                                    setSeleccionJugador1("Spock")
-                                    esconder("elecciones-jugadores")
-                                    esconder("resultado")}
-                                }>
-                                <img 
-                                    src={Spock} 
-                                    className="botones5" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                        </div>
-                    </div>
-
-                
-                    <div className="container-block">
-                        <div className="contenedor-botones">
-                            <button 
-                                className="boton-img1 teal accent-2" 
-                                onClick={() => {setSeleccionJugador2("Piedra")}}
-                            >
-                                <img 
-                                    src={Piedra} 
-                                    className="botones1" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img2 lime lighten-1" 
-                                onClick={() => {setSeleccionJugador2("Papel")}}
-                            >
-                                <img 
-                                    src={Papel} 
-                                    className="botones2" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img3 white" 
-                                onClick={() => {setSeleccionJugador2("Tijera")}}
-                            >
-                                <img 
-                                    src={Tijera} 
-                                    className="botones3" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img4 blue darken-1" 
-                                onClick={() => {setSeleccionJugador2("Lagarto")}}
-                            >
-                                <img 
-                                    src={Lagarto} 
-                                    className="botones4" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                            <button 
-                                className="boton-img5 red" 
-                                onClick={() => {setSeleccionJugador2("Spock")}}
-                            >
-                                <img 
-                                    src={Spock} 
-                                    className="botones5" 
-                                    width="100" 
-                                    height="100"
-                                /> 
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="elecciones-jugadores" id="elecciones-jugadores">
-                            <div sm={2}>
-                                Jugador 1 Eligio: {seleccionJugador1}
-                            </div>
-                            <div sm={3}>
-                                Jugador 2 Eligio: {seleccionJugador2}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="container-block"> 
-                        <div className="resultado" id="resultado">
-                            {resultado}
-                        </div>
-                    </div>
-                    
-                    <div className="row">
-                        <div className="boton-div">
-                            <button 
-                                className="boton-jugar red" 
-                                onClick={() => {
-                                    evaluarPartida2(seleccionJugador1, seleccionJugador2)
-                                    mostrar("elecciones-jugadores")
-                                    mostrar("resultado")
-                                }}
-                                >Jugar
-                            </button>
-                        </div>
-                        <div className="regla-div">    
-                            <div className= "regla-1v1">
-                                <p>
-                                    Para la modalidad de 1v1 el Jugador 1 
-                                    debera ser el primero que elija
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="main-menu">
-                            <Link to="/">
-                                <button className="boton-home">Volver</button>
-                            </Link>
-                        </div>
-                    </div>
-                        
                 </div>
+
+
+                <div className="container-block">
+                    <div className="contenedor-botones">
+                        <button 
+                            className="boton-img1 teal accent-2" 
+                            onClick={() => {
+                                setSeleccionJugador1("Piedra")
+                                esconder("elecciones-jugadores")
+                                esconder("resultado")}
+                            }>
+                            <img 
+                                src={Piedra} 
+                                className="botones1" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img2 lime lighten-1" 
+                            onClick={() => {
+                                setSeleccionJugador1("Papel")
+                                esconder("elecciones-jugadores")
+                                esconder("resultado")}
+                            }>
+                            <img 
+                                src={Papel} 
+                                className="botones2" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img3 white" 
+                            onClick={() => {
+                                setSeleccionJugador1("Tijera")
+                                esconder("elecciones-jugadores")
+                                esconder("resultado")}
+                            }>
+                            <img 
+                                src={Tijera} 
+                                className="botones3" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img4 blue darken-1" 
+                            onClick={() => {
+                                setSeleccionJugador1("Lagarto")
+                                esconder("elecciones-jugadores")
+                                esconder("resultado")}
+                            }>
+                            <img 
+                                src={Lagarto} 
+                                className="botones4" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img5 red" 
+                            onClick={() => {
+                                setSeleccionJugador1("Spock")
+                                esconder("elecciones-jugadores")
+                                esconder("resultado")}
+                            }>
+                            <img 
+                                src={Spock} 
+                                className="botones5" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                    </div>
+                </div>
+
+            
+                <div className="container-block">
+                    <div className="contenedor-botones">
+                        <button 
+                            className="boton-img1 teal accent-2" 
+                            onClick={() => {setSeleccionJugador2("Piedra")}}
+                        >
+                            <img 
+                                src={Piedra} 
+                                className="botones1" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img2 lime lighten-1" 
+                            onClick={() => {setSeleccionJugador2("Papel")}}
+                        >
+                            <img 
+                                src={Papel} 
+                                className="botones2" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img3 white" 
+                            onClick={() => {setSeleccionJugador2("Tijera")}}
+                        >
+                            <img 
+                                src={Tijera} 
+                                className="botones3" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img4 blue darken-1" 
+                            onClick={() => {setSeleccionJugador2("Lagarto")}}
+                        >
+                            <img 
+                                src={Lagarto} 
+                                className="botones4" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                        <button 
+                            className="boton-img5 red" 
+                            onClick={() => {setSeleccionJugador2("Spock")}}
+                        >
+                            <img 
+                                src={Spock} 
+                                className="botones5" 
+                                width="100" 
+                                height="100"
+                            /> 
+                        </button>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="elecciones-jugadores" id="elecciones-jugadores">
+                        <div sm={2}>
+                            Jugador 1 Eligio: {seleccionJugador1}
+                        </div>
+                        <div sm={3}>
+                            Jugador 2 Eligio: {seleccionJugador2}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container-block"> 
+                    <div className="resultado" id="resultado">
+                        {resultado}
+                    </div>
+                </div>
+                
+                <div className="row">
+                    <div className="boton-div">
+                        <button 
+                            className="boton-jugar red" 
+                            onClick={() => {
+                                evaluarPartida2(seleccionJugador1, seleccionJugador2)
+                                mostrar("elecciones-jugadores")
+                                mostrar("resultado")
+                            }}  
+                            >Jugar
+                        </button>
+                    </div>
+                    <div className="regla-div">    
+                        <div className= "regla-1v1">
+                            <p>
+                                Para la modalidad de 1v1 el Jugador 1 
+                                debera ser el primero que elija
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="main-menu">
+                        <Link to="/">
+                            <button className="boton-home">Volver</button>
+                        </Link>
+                    </div>
+                </div>
+                    
+            </div>
+            <ParticlesBg 
+                type="lines" 
+                bg={true} 
+                color="2C436D" 
+                num={200} 
+            />
         </div>
     )
 
 }
-// aparecer y desaparecer el cartelito de quien gano
+
 export default JugadorVsJugador;

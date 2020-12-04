@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import "../css/Home.css";
 import {Link} from "react-router-dom";
 import ReglasJuego from '../imagenes/reglas pptls.png';
+import ParticlesBg from 'particles-bg'
 
 function Home(){
 	return(
@@ -28,8 +29,7 @@ function Home(){
 						</div>
 
 						<div className="dos-jugadores">
-							<Link classNa
-								me="btn-small black" 
+							<Link className="btn-small black" 
 								to="/1v1">
 									Dos Jugadores
 							</Link>
@@ -37,6 +37,12 @@ function Home(){
 					</div>
 				</div>
 			</div>
+			<ParticlesBg 
+				type="lines" 
+				bg={true} 
+				color="2C436D" 
+				num={200} 
+			/>
 		</div>
 	)
 }
