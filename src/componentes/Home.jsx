@@ -24,12 +24,13 @@ function Home(){
 							<Link 
 								className="btn-small black" 
 								to="/1vsPC">
-										Un Jugador
+									Un Jugador
 							</Link>
 						</div>
 
 						<div className="dos-jugadores">
-							<Link className="btn-small black" 
+							<Link 
+								className="btn-small black" 
 								to="/1v1">
 									Dos Jugadores
 							</Link>

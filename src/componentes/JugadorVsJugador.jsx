@@ -332,8 +332,10 @@ function JugadorVsJugador (){
 
                 <div className="row">
                     <div className="main-menu">
-                        <Link to="/">
-                            <button className="boton-home">Volver</button>
+                        <Link 
+                            className="boton-home"
+                            to="/">
+                                Volver
                         </Link>
                     </div>
                 </div>
