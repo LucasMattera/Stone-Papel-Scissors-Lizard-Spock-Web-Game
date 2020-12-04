@@ -9,7 +9,7 @@ function Navbar(){
             <div>
                 <header className= "header">
                     <div sm={6}>
-                        <p className="titulo">TP FINAL CONSTRUCCION DE INTERFACES DE USUARIO </p> 
+                        <p className="titulo">Piedra Papel Tijera Lagarto Spock</p> 
                     </div>
                 </header>
             </div>                

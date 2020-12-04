@@ -19,17 +19,11 @@ function Home(){
 				<div className="menu-principal container">
 
 					<div className="row">
-						<div>
-							<p className="titulo-juego">Piedra, Papel, Tijera, Lagarto, Spock</p>
-						</div>
-					</div>
-
-					<div className="row">
 						<div className="un-jugador">
 							<Link 
 								className="btn-small black" 
 								to="/1vsPC">
-									Un Jugador
+										Un Jugador
 							</Link>
 						</div>
 
