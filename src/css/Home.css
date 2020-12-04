@@ -7,8 +7,17 @@
 }
 
 .btn-small:link, .btn-small:visited{
-	color: rgb(201, 53, 53);
-	text-decoration:none
+	color: rgb(211, 44, 44);
+	text-decoration:none;
+	text-shadow: 
+		 1px  0   0 rgb(5, 5, 5),
+		-1px  0   0 rgb(5, 5, 5),
+		 0    1px 0 rgb(5, 5, 5),
+		 0   -1px 0 rgb(5, 5, 5),
+		 1px  1px   rgb(5, 5, 5),
+		-1px -1px 0 rgb(5, 5, 5),
+		 1px -1px 0 rgb(5, 5, 5),
+		-1px  1px 0 rgb(5, 5, 5);
 }
 
 .btn-small:hover, .btn-small:active{
