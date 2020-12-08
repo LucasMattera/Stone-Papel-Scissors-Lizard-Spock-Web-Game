@@ -1,6 +1,6 @@
-language: ![Spanish](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-es.png)
+language: ![English](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-en.png)
 also available in:
-[![English](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-en.png)](LEEME.md) -
+[![Spanish](https://raw.githubusercontent.com/codenautas/multilang/master/img/lang-es.png)](LEEME.md) -
 
 
 # Getting Started with Create React App
